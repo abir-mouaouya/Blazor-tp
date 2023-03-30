@@ -1,0 +1,29 @@
+﻿[
+  {
+    "Date": "2018-05-06",
+    "TemperatureC": 1,
+    "Summary": "Cloudy"
+    
+  },
+  {
+    "Date": "2018-05-07",
+    "TemperatureC": 14,
+    "Summary": "sun"
+  },
+  {
+    "Date": "2018-05-08",
+    "TemperatureC": -13,
+    "Summary": "Cloudy"
+    
+  },
+  {
+    "Date": "2018-05-09",
+    "TemperatureC": -16,
+    "Summary": "Rainy"
+  },
+  {
+    "Date": "2018-05-10",
+    "TemperatureC": -2,
+    "Summary": "Rainy"
+  }
+]

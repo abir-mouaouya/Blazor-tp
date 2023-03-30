@@ -1,0 +1,51 @@
+﻿@page "/weeklyforecast"
+@inject HttpClient Http
+@using Data;
+@using Models;
+@inject weatherForecastService weatherService
+<PageTitle>Weekly Forecast</PageTitle>
+
+<h1>Weekly Forecast</h1>
+@if (forecasts == null)
+{
+    <p><em>No Data</em></p>
+}
+else
+{
+<div class="d-flex">
+    @foreach (var f in forecasts)
+    {
+        <WeatherDay   
+           TemperatureC="f.TemperatureC"
+           Summary="@f.Summary"
+           DayOfWeek="f.Date.DayOfWeek"
+            Selected = "f.Selected"
+            OnSelected="HandleItemSelected"
+        >
+           <CustomMessage>
+               @if(f.Summary == "Rainy")
+               {
+                   <div class="alert alert-danger">
+                       <strong>Tornado Warning!</strong>
+                   </div>
+               }
+           </CustomMessage>
+        </WeatherDay>
+    }
+</div>
+}
+@code {
+    private WeatherForecast[]? forecasts;
+    protected override async Task OnInitializedAsync()
+    {
+        forecasts = await weatherService.GetForecastAsync();
+    }
+
+    void HandleItemSelected()
+    {
+        
+    }
+
+
+
+}

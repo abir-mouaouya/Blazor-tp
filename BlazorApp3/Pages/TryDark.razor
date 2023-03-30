@@ -1,0 +1,23 @@
+﻿@page "/trydark"
+
+<h3>TryDark</h3>
+<div class="@SetThemeName">
+    <div class="alert alert-info my-2">
+        Click here to switch themes 
+     <button onclick="@SwapTheme" Primary="true"  class="bg-primary">
+         @SetThemeName Mode
+     </button>
+    </div>
+</div>
+@code {
+    bool isDark;
+
+    string SetThemeName => isDark ? "dark-mode" : "Light";
+
+    async Task SwapTheme()
+    {
+        isDark = !isDark;
+        Console.WriteLine("isDark", isDark);
+
+    }
+}

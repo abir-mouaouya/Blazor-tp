@@ -1,0 +1,26 @@
+﻿@page "/colorreverse"
+@using BlazorApp3.Models;
+<h3>Color : </h3>
+<ul>
+    @foreach(var color in colors)
+    {
+        <li @key="color.Id" class="list-group-item">
+        <h1>
+            @color.Value
+        </h1>
+        <input  type="checkbox"/>
+        </li>
+    }
+</ul>
+<button @onclick="_=>colors = colors.Reverse()">Reverse</button>
+
+
+@code {
+    IEnumerable<Color> colors = new Color[]
+        {
+        new Color{Id=0, Value="Green"},
+        new Color{Id=1, Value= "Blue"},
+        new Color{Id=2, Value ="Orange"},
+        new Color{Id=3, Value="Purple"}
+        };
+}
